@@ -2,6 +2,7 @@ package utils
 
 import (
 	"runtime"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 )
@@ -15,7 +16,7 @@ func Info(message string) {
 	}
 
 	// 함수명을 가져옴
-	funcName := runtime.FuncForPC(pc).Name()
+	funcName := strings.Split(runtime.FuncForPC(pc).Name(), "/")[3]
 
 	// 파일명, 라인 번호, 함수명을 포함한 로그 메시지 출력
 	logrus.WithFields(logrus.Fields{
@@ -39,4 +40,8 @@ func Error(message string) {
 		"line":     line,
 		"function": funcName,
 	}).Error(message)
+}
+
+func init() {
+	logrus.SetFormatter(&logrus.JSONFormatter{})
 }

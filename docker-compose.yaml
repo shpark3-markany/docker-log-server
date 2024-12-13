@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  docker-log-server:
+    image: docker-log-server:latest
+    ports:
+      - "1220:1220"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - .env

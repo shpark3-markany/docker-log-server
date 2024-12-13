@@ -4,7 +4,7 @@ go 1.23.3
 
 require (
 	github.com/docker/docker v27.4.0+incompatible
-	github.com/labstack/echo v3.3.10+incompatible
+	github.com/gorilla/websocket v1.5.3
 	github.com/labstack/echo/v4 v4.13.1
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.8.1
@@ -43,5 +43,6 @@ require (
 	golang.org/x/net v0.30.0 // indirect
 	golang.org/x/sys v0.27.0 // indirect
 	golang.org/x/text v0.20.0 // indirect
+	golang.org/x/time v0.5.0 // indirect
 	gotest.tools/v3 v3.5.1 // indirect
 )
